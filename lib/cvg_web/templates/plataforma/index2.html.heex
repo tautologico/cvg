@@ -1,0 +1,30 @@
+<h1>Listing Plataformas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Fabricante</th>
+      <th>Lancamento</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for plataforma <- @plataformas do %>
+    <tr>
+      <td><%= plataforma.nome %></td>
+      <td><%= plataforma.fabricante %></td>
+      <td><%= plataforma.lancamento %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.plataforma_path(@conn, :show, plataforma) %></span>
+        <span><%= link "Edit", to: Routes.plataforma_path(@conn, :edit, plataforma) %></span>
+        <span><%= link "Delete", to: Routes.plataforma_path(@conn, :delete, plataforma), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Plataforma", to: Routes.plataforma_path(@conn, :new) %></span>

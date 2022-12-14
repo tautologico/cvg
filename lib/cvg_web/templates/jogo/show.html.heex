@@ -1,0 +1,28 @@
+<h1>Show Jogo</h1>
+
+<ul>
+
+  <li>
+    <strong>Titulo:</strong>
+    <%= @jogo.titulo %>
+  </li>
+
+  <li>
+    <strong>Empresa:</strong>
+    <%= @jogo.empresa %>
+  </li>
+
+  <li>
+    <strong>Lancamento:</strong>
+    <%= @jogo.lancamento %>
+  </li>
+
+  <li>
+    <strong>Plataforma:</strong>
+    <%= @jogo.plataforma_id %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.jogo_path(@conn, :edit, @jogo) %></span> |
+<span><%= link "Back", to: Routes.jogo_path(@conn, :index) %></span>

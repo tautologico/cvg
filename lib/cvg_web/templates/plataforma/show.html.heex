@@ -1,0 +1,23 @@
+<h1>Show Plataforma</h1>
+
+<ul>
+
+  <li>
+    <strong>Nome:</strong>
+    <%= @plataforma.nome %>
+  </li>
+
+  <li>
+    <strong>Fabricante:</strong>
+    <%= @plataforma.fabricante %>
+  </li>
+
+  <li>
+    <strong>Lancamento:</strong>
+    <%= @plataforma.lancamento %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.plataforma_path(@conn, :edit, @plataforma) %></span> |
+<span><%= link "Back", to: Routes.plataforma_path(@conn, :index) %></span>

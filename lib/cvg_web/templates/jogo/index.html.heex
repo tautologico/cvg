@@ -1,0 +1,30 @@
+<h1>Listing Jogos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Empresa</th>
+      <th>Lancamento</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for jogo <- @jogos do %>
+    <tr>
+      <td><%= jogo.titulo %></td>
+      <td><%= jogo.empresa %></td>
+      <td><%= jogo.lancamento %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.jogo_path(@conn, :show, jogo) %></span>
+        <span><%= link "Edit", to: Routes.jogo_path(@conn, :edit, jogo) %></span>
+        <span><%= link "Delete", to: Routes.jogo_path(@conn, :delete, jogo), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Jogo", to: Routes.jogo_path(@conn, :new) %></span>
